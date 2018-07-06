@@ -53,14 +53,27 @@ void PlayGame()
 		FText Guess = GetGuess(); // TODO: make loop checking valid.
 
 		EGuessStatus Status = BCGame.CheckGuessValidity(Guess);
+		switch (Status)
+		{
+		case EGuessStatus::OK:
+			break;
+		case EGuessStatus::NOT_Isogram:
+			break;
+		case EGuessStatus::Wrong_Length:
+			std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word.\n";
+			break;
+		case EGuessStatus::Not_Lowercase:
+			break;
+		default:
+			break;
+		}
 		
 		// submit valid guess to the game
 		FBullCowCount BullCowCout = BCGame.SubmitGuess(Guess);
 
 		// print number of bulls and cows
 		std::cout << "Bulls = " << BullCowCout.Bulls;
-		std::cout << ". Cows = " << BullCowCout.Cows << std::endl;
-		std::cout << std::endl;
+		std::cout << ". Cows = " << BullCowCout.Cows << "\n\n";
 	}
 	// TODO: add a game summary
 }

@@ -12,7 +12,7 @@ void FBullCowGame::Reset()
 	constexpr int32 MAX_TRIES = 8;
 	MyMaxTries = MAX_TRIES;
 
-	const FString HIDDEN_WORD = "adfasfsajifjefjas";
+	const FString HIDDEN_WORD = "planes";
 	MyHiddenWord = HIDDEN_WORD;
 
 	MyCurrentTry = 1;
