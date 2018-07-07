@@ -13,6 +13,7 @@ struct FBullCowCount
 
 enum class EGuessStatus
 {
+    Invalid_Status,
 	OK,
 	NOT_Isogram,
 	Wrong_Length,
@@ -23,21 +24,22 @@ class FBullCowGame
 {
 public:
 	FBullCowGame(); // constructor
+
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
 	int32 GetHiddenWordLength() const;
-
 	bool IsGameWon() const;
+
 	EGuessStatus CheckGuessValidity(FString);
-
 	void Reset(); // TODO: make a more rich return value;
-	FBullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitValidGuess(FString);
 
 
-// Try ignore this and focus on the interface above 
+// Try ignore this and focus on the interface above
 private:
 	// see constructor for initialization
 	int32 MyCurrentTry;
 	int32 MyMaxTries;
 	FString MyHiddenWord;
+    bool bGameWon;
 };

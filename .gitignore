@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+
+# MakeFiles and build, release files when working in Linux machine.
+build/
+bin/
+program
+MakeFile
+
