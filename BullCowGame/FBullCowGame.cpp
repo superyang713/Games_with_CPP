@@ -1,5 +1,6 @@
 #include "FBullCowGame.h"
 #include <map>
+#include <time.h>
 
 
 // to make syntax Unreal friendly
@@ -32,6 +33,7 @@ void FBullCowGame::Reset()
     const FString HIDDEN_WORDS[NumberOfHiddenWords] = {
         "cat", "dog", "planet", "earth"
     };
+	srand( time(NULL) );
     int32 RandomIndex = rand() % NumberOfHiddenWords;
     MyHiddenWord = HIDDEN_WORDS[RandomIndex];
 
